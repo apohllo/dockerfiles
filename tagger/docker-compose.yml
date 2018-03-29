@@ -1,0 +1,14 @@
+version: '3'
+services:
+  tagger:
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+      # Useful during development
+      #volumes:
+      #- /home/apohllo/src/nlp/3rd-party/krnnt:/home/krnnt/krnnt
+    command: "python3 /home/krnnt/krnnt/krnnt_serve.py /home/krnnt/krnnt/data"
+    tty: true
+    stdin_open: true
+    ports:
+      - "9200:9200"

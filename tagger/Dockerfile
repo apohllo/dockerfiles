@@ -10,8 +10,8 @@ RUN apt-get update &&\
     apt-get install -y wget software-properties-common python-software-properties &&\
     apt-get install -y sudo libncurses-dev python3-pip unzip &&\
 # don't install morfeusz 2 for now - it doesn't work with Maca
-#   wget -O - http:/sgjp.pl/apt/sgjp.gpg.key | apt-key add - &&\
-#   add-apt-repository 'deb http:/sgjp.pl/apt/ubuntu trusty main' &&\
+#   wget -O - http://sgjp.pl/apt/sgjp.gpg.key | apt-key add - &&\
+#   add-apt-repository 'deb http://sgjp.pl/apt/ubuntu trusty main' &&\
 #   apt-get update &&\
 #   apt-get install -y morfeusz2 morfeusz2-dictionary-sgjp libmorfeusz2 libmorfeusz2-dev python-morfeusz2 &&\
     rm -rf /var/lib/apt/lists/* /var/cache/apt/*
@@ -19,7 +19,7 @@ RUN pip3 install keras regex progress setproctitle h5py tensorflow
 RUN echo 'krnnt\nkrnnt\n' | adduser krnnt --home /home/krnnt --ingroup sudo
 USER krnnt
 RUN cd &&\
-    git clone http:/github.com/apohllo/corpus2.git &&\
+    git clone http://github.com/apohllo/corpus2.git &&\
     cd /home/krnnt/corpus2 &&\
     mkdir bin &&\
     cd bin &&\
@@ -28,7 +28,7 @@ RUN cd &&\
     echo 'krnnt' | sudo -S make install &&\
     rm -rf /home/krnnt/corpus2
 RUN cd &&\ 
-    git clone http:/github.com/apohllo/toki.git &&\
+    git clone http://github.com/apohllo/toki.git &&\
     cd /home/krnnt/toki &&\
     mkdir bin &&\
     cd bin &&\
@@ -39,11 +39,11 @@ RUN cd &&\
 RUN cd &&\
     mkdir morfeusz &&\
     cd morfeusz &&\
-    wget https:/launchpad.net/~bartosz-zaborowski/+archive/ubuntu/nlp/+files/morfeusz-sgjp_0.81-1_amd64.deb &&\
+    wget https://launchpad.net/~bartosz-zaborowski/+archive/ubuntu/nlp/+files/morfeusz-sgjp_0.81-1_amd64.deb &&\
     echo 'krnnt' | sudo dpkg -i morfeusz-sgjp_0.81-1_amd64.deb &&\
     rm -rf /home/krnnt/morfeusz
 RUN cd &&\ 
-    git clone http:/github.com/apohllo/maca.git &&\
+    git clone http://github.com/apohllo/maca.git &&\
     cd /home/krnnt/maca/third_party/SFST-1.2/SFST/src/ &&\
     make &&\
     echo 'krnnt' | sudo -S make install &&\
@@ -56,12 +56,12 @@ RUN cd &&\
     echo 'krnnt' | sudo -S ldconfig &&\
     rm -rf /home/krnnt/maca
 RUN cd &&\ 
-    git clone https:/github.com/apohllo/krnnt &&\
+    git clone https://github.com/apohllo/krnnt &&\
     cd krnnt &&\
     git checkout 2-server &&\
     mkdir data &&\
     cd data &&\
-    wget https:/github.com/kwrobel-nlp/krnnt/releases/download/poleval/reanalyze_150epochs_train1.0.zip &&\
+    wget https://github.com/kwrobel-nlp/krnnt/releases/download/poleval/reanalyze_150epochs_train1.0.zip &&\
     unzip reanalyze_150epochs_train1.0.zip &&\
     mv weights_reana150_1.0.hdf5 weights.hdf5 &&\
     mv lemmatisation_reana150_1.0.pkl lemmatisation.pkl &&\

@@ -3,7 +3,7 @@
 This a definition of a docker image of the KRNNT tagger + all its dependencies. 
 
 The source of the Docker image is available at:
-https://github/com/apohllo/dockerfiles/blob/master/tagger/Dockerfile
+https://github.com/apohllo/dockerfiles/blob/master/tagger/Dockerfile
 
 The source code of the tagger is available at:
 https://github.com/kwrobel-nlp/krnnt

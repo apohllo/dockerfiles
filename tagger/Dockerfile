@@ -58,7 +58,6 @@ RUN cd &&\
 RUN cd &&\ 
     git clone https://github.com/kwrobel-nlp/krnnt &&\
     cd krnnt &&\
-    git checkout 2-server &&\
     mkdir data &&\
     cd data &&\
     wget https://github.com/kwrobel-nlp/krnnt/releases/download/poleval/reanalyze_150epochs_train1.0.zip &&\

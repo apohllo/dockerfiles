@@ -15,7 +15,7 @@ RUN apt-get update &&\
 #   apt-get update &&\
 #   apt-get install -y morfeusz2 morfeusz2-dictionary-sgjp libmorfeusz2 libmorfeusz2-dev python-morfeusz2 &&\
     rm -rf /var/lib/apt/lists/* /var/cache/apt/*
-RUN pip3 install keras regex progress setproctitle h5py tensorflow
+RUN pip3 install keras==2.1.2 regex progress setproctitle h5py tensorflow flask
 RUN echo 'krnnt\nkrnnt\n' | adduser krnnt --home /home/krnnt --ingroup sudo
 USER krnnt
 RUN cd &&\
@@ -56,9 +56,8 @@ RUN cd &&\
     echo 'krnnt' | sudo -S ldconfig &&\
     rm -rf /home/krnnt/maca
 RUN cd &&\ 
-    git clone https://github.com/apohllo/krnnt &&\
+    git clone https://github.com/kwrobel-nlp/krnnt &&\
     cd krnnt &&\
-    git checkout 2-server &&\
     mkdir data &&\
     cd data &&\
     wget https://github.com/kwrobel-nlp/krnnt/releases/download/poleval/reanalyze_150epochs_train1.0.zip &&\

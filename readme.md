@@ -9,4 +9,4 @@ cut down the installation and configuration time from days to seconds.
 
 So far the following tools are available:
 
-* [KRNNT tagger](tagger) -- Polish tagger based on recurrent neural networks
+* [KRNNT tagger](krnnt) -- Polish tagger based on recurrent neural networks

@@ -11,4 +11,4 @@ services:
     tty: true
     stdin_open: true
     ports:
-      - "9200:9200"
+      - "9003:9003"
